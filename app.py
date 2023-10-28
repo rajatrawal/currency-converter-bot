@@ -10,8 +10,10 @@ def get_conversion(source_currency,target_currency,source_amount):
         global API_KEY
         response = requests.get(f"https://exchange-rates.abstractapi.com/v1/live/?api_key={API_KEY}&base={source_currency}&target={target_currency}")
         context =response.json()
-        rate = context["exchange_rates"][target_currency]
-        return rate*source_amount
+        print(context)
+        # rate = context["exchange_rates"][target_currency]
+        # return rate*source_amount
+        return 5000
 
 @app.route('/',methods=['POST'])
 def index():
